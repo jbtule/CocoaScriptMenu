@@ -538,7 +538,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		3E87021908DD325A0015C10A /* Debug */ = {
+		3E87021908DD325A0015C10A /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = (
@@ -562,14 +562,15 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				LIBRARY_STYLE = DYNAMIC;
+				MACH_O_TYPE = mh_dylib;
 				PREBINDING = NO;
 				PRODUCT_NAME = CocoaScriptMenu;
 				WRAPPER_EXTENSION = framework;
 				ZERO_LINK = YES;
 			};
-			name = Debug;
+			name = Development;
 		};
-		3E87021A08DD325A0015C10A /* Release */ = {
+		3E87021A08DD325A0015C10A /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
@@ -587,12 +588,13 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				LIBRARY_STYLE = DYNAMIC;
+				MACH_O_TYPE = mh_dylib;
 				PREBINDING = NO;
 				PRODUCT_NAME = CocoaScriptMenu;
 				WRAPPER_EXTENSION = framework;
 				ZERO_LINK = NO;
 			};
-			name = Release;
+			name = Deployment;
 		};
 		3E87021B08DD325A0015C10A /* Default */ = {
 			isa = XCBuildConfiguration;
@@ -610,27 +612,28 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Frameworks";
 				LIBRARY_STYLE = DYNAMIC;
+				MACH_O_TYPE = mh_dylib;
 				PREBINDING = NO;
 				PRODUCT_NAME = CocoaScriptMenu;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Default;
 		};
-		3E87021D08DD325A0015C10A /* Debug */ = {
+		3E87021D08DD325A0015C10A /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
-			name = Debug;
+			name = Development;
 		};
-		3E87021E08DD325A0015C10A /* Release */ = {
+		3E87021E08DD325A0015C10A /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				MACOSX_DEPLOYMENT_TARGET = 10.3;
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
-			name = Release;
+			name = Deployment;
 		};
 		3E87021F08DD325A0015C10A /* Default */ = {
 			isa = XCBuildConfiguration;
@@ -640,7 +643,7 @@
 			};
 			name = Default;
 		};
-		3E87022F08DD32CF0015C10A /* Debug */ = {
+		3E87022F08DD32CF0015C10A /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
@@ -671,9 +674,9 @@
 				);
 				WRAPPER_EXTENSION = octest;
 			};
-			name = Debug;
+			name = Development;
 		};
-		3E87023008DD32CF0015C10A /* Release */ = {
+		3E87023008DD32CF0015C10A /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
@@ -704,7 +707,7 @@
 				);
 				WRAPPER_EXTENSION = octest;
 			};
-			name = Release;
+			name = Deployment;
 		};
 		3E87023108DD32CF0015C10A /* Default */ = {
 			isa = XCBuildConfiguration;
@@ -744,8 +747,8 @@
 		3E87021808DD325A0015C10A /* Build configuration list for PBXNativeTarget "CocoaScriptMenu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3E87021908DD325A0015C10A /* Debug */,
-				3E87021A08DD325A0015C10A /* Release */,
+				3E87021908DD325A0015C10A /* Development */,
+				3E87021A08DD325A0015C10A /* Deployment */,
 				3E87021B08DD325A0015C10A /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -754,8 +757,8 @@
 		3E87021C08DD325A0015C10A /* Build configuration list for PBXProject "CocoaScriptMenu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3E87021D08DD325A0015C10A /* Debug */,
-				3E87021E08DD325A0015C10A /* Release */,
+				3E87021D08DD325A0015C10A /* Development */,
+				3E87021E08DD325A0015C10A /* Deployment */,
 				3E87021F08DD325A0015C10A /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -764,11 +767,12 @@
 		3E87022E08DD32CF0015C10A /* Build configuration list for PBXNativeTarget "UnitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3E87022F08DD32CF0015C10A /* Debug */,
-				3E87023008DD32CF0015C10A /* Release */,
+				3E87022F08DD32CF0015C10A /* Development */,
+				3E87023008DD32CF0015C10A /* Deployment */,
 				3E87023108DD32CF0015C10A /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
 		};
 /* End XCConfigurationList section */
 	};
