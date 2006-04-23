@@ -13,7 +13,7 @@
 @implementation CSMBaseCommand
 
 +(id)alloc{
-    return [[super superclass] alloc];
+    return [[[self superclass] superclass] alloc];
 }
 
 -(id)initWithScriptPath:(NSString*) aPath{
