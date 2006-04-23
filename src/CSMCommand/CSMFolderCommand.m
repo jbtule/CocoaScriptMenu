@@ -49,6 +49,7 @@
 #import "CSMFolderCommand.h"
 #import "CSMScriptMenu.h"
 #import "CSMFileSubscription.h"
+#import "CSMCommand-SubclassMustImplement.h"
 
  void CSMFolderUpdateMenuHandle(FNMessage message,OptionBits flags,void* aFolderCommand,FNSubscriptionRef subscription){
     if(message == kFNDirectoryModifiedMessage){

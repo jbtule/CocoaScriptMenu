@@ -35,21 +35,20 @@
 *
 * ***** END LICENSE BLOCK ***** */
 
-
 //
-//  CSMPlaceholderCommand.h
+//  CSMCommandPrivate.h
 //  CocoaScriptMenu
 //
-//  Created by James Tuley on 9/19/05.
+//  Created by James Tuley on 9/18/05.
 //  Copyright 2005 James Tuley. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
 #import "CSMCommand.h"
-#import "CSMCommandPrivate.h"
 
-@interface CSMPlaceholderCommand : CSMCommand {
+@interface CSMCommand(SubclassMustImplement) 
 
-}
+-(void)CSM_executeOperation;
 
+-(NSMenuItem*)CSM_menuItem;
 @end

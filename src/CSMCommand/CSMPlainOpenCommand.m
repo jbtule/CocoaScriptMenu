@@ -47,14 +47,8 @@
 #import "CSMPlainOpenCommand.h"
 #import "CSMMenuNameParser.h"
 
-@implementation CSMPlainOpenCommand
 
--(id)initWithScriptPath:(NSString*) aPath{
-    if(self = [super init]){
-        theFilePath = [[aPath stringByStandardizingPath] retain];
-        theNameParser = [[CSMMenuNameParser alloc] initWithPath:theFilePath];
-    }return self;
-}
+@implementation CSMPlainOpenCommand
 
 -(void)CSM_executeOperation{
     [[NSWorkspace sharedWorkspace] openFile:[self filePath] withApplication:nil andDeactivate:NO];

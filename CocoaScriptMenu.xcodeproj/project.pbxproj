@@ -7,10 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E04881409D51518002356DB /* CSMCommandCreator.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E04881209D51518002356DB /* CSMCommandCreator.h */; };
+		3E04881509D51518002356DB /* CSMCommandCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E04881309D51518002356DB /* CSMCommandCreator.m */; };
+		3E04881609D5152A002356DB /* CSMExecutableCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EC96ABF08DE274B002DE0DF /* CSMExecutableCommand.h */; };
+		3E04881709D5152B002356DB /* CSMFolderCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EC96AE308DE2767002DE0DF /* CSMFolderCommand.h */; };
+		3E04882A09D51661002356DB /* CSMBaseCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E04882809D51661002356DB /* CSMBaseCommand.h */; };
+		3E04882B09D51661002356DB /* CSMBaseCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E04882909D51661002356DB /* CSMBaseCommand.m */; };
 		3E05BDFB08DE28C100121A7B /* NSString-UTIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E05BDF908DE28C100121A7B /* NSString-UTIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3E05BDFC08DE28C100121A7B /* NSString-UTIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E05BDFA08DE28C100121A7B /* NSString-UTIAdditions.m */; };
-		3E05BE2608DE2A3500121A7B /* CSMCommandPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E05BE2408DE2A3500121A7B /* CSMCommandPrivate.h */; };
-		3E05BE2708DE2A3500121A7B /* CSMCommandPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E05BE2508DE2A3500121A7B /* CSMCommandPrivate.m */; };
+		3E05BE2608DE2A3500121A7B /* CSMCommand-SubclassMustImplement.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E05BE2408DE2A3500121A7B /* CSMCommand-SubclassMustImplement.h */; };
+		3E05BE2708DE2A3500121A7B /* CSMCommand-SubclassMustImplement.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E05BE2508DE2A3500121A7B /* CSMCommand-SubclassMustImplement.m */; };
 		3E05BEED08DE36B100121A7B /* CSMExecutableCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC96AC008DE274B002DE0DF /* CSMExecutableCommand.m */; };
 		3E05BEF008DE36B400121A7B /* CSMFolderCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC96AE408DE2767002DE0DF /* CSMFolderCommand.m */; };
 		3E05BF0908DE384E00121A7B /* CSMPlainOpenCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E05BF0708DE384E00121A7B /* CSMPlainOpenCommand.h */; };
@@ -29,8 +35,6 @@
 		3E8702B108DD418D0015C10A /* UTITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8702B008DD418D0015C10A /* UTITests.m */; };
 		3E8702B908DD42090015C10A /* CocoaScriptMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E8702B308DD41C90015C10A /* CocoaScriptMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3E9F5C8108DF84F400BD4B78 /* FolderTest in Resources */ = {isa = PBXBuildFile; fileRef = 3E9F5C7F08DF84F400BD4B78 /* FolderTest */; };
-		3E9F5DCA08DFA70000BD4B78 /* CSMPlaceholderCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E9F5DC808DFA70000BD4B78 /* CSMPlaceholderCommand.h */; };
-		3E9F5DCB08DFA70000BD4B78 /* CSMPlaceholderCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9F5DC908DFA70000BD4B78 /* CSMPlaceholderCommand.m */; };
 		3E9F5E9708DFB8DD00BD4B78 /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3E9F5E9608DFB8DD00BD4B78 /* License.txt */; };
 		3E9F606708E0D96D00BD4B78 /* CSMFileSubscription.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E9F606508E0D96D00BD4B78 /* CSMFileSubscription.h */; };
 		3E9F606808E0D96D00BD4B78 /* CSMFileSubscription.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9F606608E0D96D00BD4B78 /* CSMFileSubscription.m */; };
@@ -101,10 +105,14 @@
 		089C1667FE841158C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		32DBCF5E0370ADEE00C91783 /* CocoaScriptMenu_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaScriptMenu_Prefix.pch; sourceTree = "<group>"; };
+		3E04881209D51518002356DB /* CSMCommandCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMCommandCreator.h; sourceTree = "<group>"; };
+		3E04881309D51518002356DB /* CSMCommandCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMCommandCreator.m; sourceTree = "<group>"; };
+		3E04882809D51661002356DB /* CSMBaseCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMBaseCommand.h; sourceTree = "<group>"; };
+		3E04882909D51661002356DB /* CSMBaseCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMBaseCommand.m; sourceTree = "<group>"; };
 		3E05BDF908DE28C100121A7B /* NSString-UTIAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString-UTIAdditions.h"; sourceTree = "<group>"; };
 		3E05BDFA08DE28C100121A7B /* NSString-UTIAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString-UTIAdditions.m"; sourceTree = "<group>"; };
-		3E05BE2408DE2A3500121A7B /* CSMCommandPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMCommandPrivate.h; sourceTree = "<group>"; };
-		3E05BE2508DE2A3500121A7B /* CSMCommandPrivate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMCommandPrivate.m; sourceTree = "<group>"; };
+		3E05BE2408DE2A3500121A7B /* CSMCommand-SubclassMustImplement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CSMCommand-SubclassMustImplement.h"; sourceTree = "<group>"; };
+		3E05BE2508DE2A3500121A7B /* CSMCommand-SubclassMustImplement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CSMCommand-SubclassMustImplement.m"; sourceTree = "<group>"; };
 		3E05BF0708DE384E00121A7B /* CSMPlainOpenCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMPlainOpenCommand.h; sourceTree = "<group>"; };
 		3E05BF0808DE384E00121A7B /* CSMPlainOpenCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMPlainOpenCommand.m; sourceTree = "<group>"; };
 		3E05C08408DE49D700121A7B /* CSMScriptMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMScriptMenu.h; sourceTree = "<group>"; };
@@ -125,8 +133,6 @@
 		3E8702B008DD418D0015C10A /* UTITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UTITests.m; sourceTree = "<group>"; };
 		3E8702B308DD41C90015C10A /* CocoaScriptMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaScriptMenu.h; sourceTree = "<group>"; };
 		3E9F5C7F08DF84F400BD4B78 /* FolderTest */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FolderTest; sourceTree = "<group>"; };
-		3E9F5DC808DFA70000BD4B78 /* CSMPlaceholderCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMPlaceholderCommand.h; sourceTree = "<group>"; };
-		3E9F5DC908DFA70000BD4B78 /* CSMPlaceholderCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMPlaceholderCommand.m; sourceTree = "<group>"; };
 		3E9F5E9608DFB8DD00BD4B78 /* License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.txt; sourceTree = SOURCE_ROOT; };
 		3E9F606508E0D96D00BD4B78 /* CSMFileSubscription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMFileSubscription.h; sourceTree = "<group>"; };
 		3E9F606608E0D96D00BD4B78 /* CSMFileSubscription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMFileSubscription.m; sourceTree = "<group>"; };
@@ -211,6 +217,8 @@
 		08FB77AEFE84172EC02AAC07 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				3E04881209D51518002356DB /* CSMCommandCreator.h */,
+				3E04881309D51518002356DB /* CSMCommandCreator.m */,
 				3E87023608DD33260015C10A /* CSMCommand.h */,
 				3E87023708DD33260015C10A /* CSMCommand.m */,
 				3E76119808DE875200FA5677 /* CSMCommand */,
@@ -269,10 +277,10 @@
 				3EC96AE408DE2767002DE0DF /* CSMFolderCommand.m */,
 				3E05BF0708DE384E00121A7B /* CSMPlainOpenCommand.h */,
 				3E05BF0808DE384E00121A7B /* CSMPlainOpenCommand.m */,
-				3E05BE2408DE2A3500121A7B /* CSMCommandPrivate.h */,
-				3E05BE2508DE2A3500121A7B /* CSMCommandPrivate.m */,
-				3E9F5DC808DFA70000BD4B78 /* CSMPlaceholderCommand.h */,
-				3E9F5DC908DFA70000BD4B78 /* CSMPlaceholderCommand.m */,
+				3E05BE2408DE2A3500121A7B /* CSMCommand-SubclassMustImplement.h */,
+				3E05BE2508DE2A3500121A7B /* CSMCommand-SubclassMustImplement.m */,
+				3E04882809D51661002356DB /* CSMBaseCommand.h */,
+				3E04882909D51661002356DB /* CSMBaseCommand.m */,
 			);
 			path = CSMCommand;
 			sourceTree = "<group>";
@@ -304,13 +312,16 @@
 				3E87025B08DD36820015C10A /* CSMWorkflowCommand.h in Headers */,
 				3E8702B908DD42090015C10A /* CocoaScriptMenu.h in Headers */,
 				3E05BDFB08DE28C100121A7B /* NSString-UTIAdditions.h in Headers */,
-				3E05BE2608DE2A3500121A7B /* CSMCommandPrivate.h in Headers */,
+				3E05BE2608DE2A3500121A7B /* CSMCommand-SubclassMustImplement.h in Headers */,
 				3E05BF0908DE384E00121A7B /* CSMPlainOpenCommand.h in Headers */,
 				3E05C08608DE49D700121A7B /* CSMScriptMenu.h in Headers */,
-				3E9F5DCA08DFA70000BD4B78 /* CSMPlaceholderCommand.h in Headers */,
 				3E9F606708E0D96D00BD4B78 /* CSMFileSubscription.h in Headers */,
 				3EDF534A08EF52F400FAAC2C /* CSMMenuNameParser.h in Headers */,
 				3ED7014A08FB6C51003EB257 /* TenThreeCompatibility.h in Headers */,
+				3E04881409D51518002356DB /* CSMCommandCreator.h in Headers */,
+				3E04881609D5152A002356DB /* CSMExecutableCommand.h in Headers */,
+				3E04881709D5152B002356DB /* CSMFolderCommand.h in Headers */,
+				3E04882A09D51661002356DB /* CSMBaseCommand.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,13 +517,14 @@
 				3E05BEED08DE36B100121A7B /* CSMExecutableCommand.m in Sources */,
 				3E05BEF008DE36B400121A7B /* CSMFolderCommand.m in Sources */,
 				3E05BDFC08DE28C100121A7B /* NSString-UTIAdditions.m in Sources */,
-				3E05BE2708DE2A3500121A7B /* CSMCommandPrivate.m in Sources */,
+				3E05BE2708DE2A3500121A7B /* CSMCommand-SubclassMustImplement.m in Sources */,
 				3E05BF0A08DE384E00121A7B /* CSMPlainOpenCommand.m in Sources */,
 				3E05C08708DE49D700121A7B /* CSMScriptMenu.m in Sources */,
-				3E9F5DCB08DFA70000BD4B78 /* CSMPlaceholderCommand.m in Sources */,
 				3E9F606808E0D96D00BD4B78 /* CSMFileSubscription.m in Sources */,
 				3EDF534B08EF52F400FAAC2C /* CSMMenuNameParser.m in Sources */,
 				3ED7014908FB6C50003EB257 /* TenThreeCompatibility.m in Sources */,
+				3E04881509D51518002356DB /* CSMCommandCreator.m in Sources */,
+				3E04882B09D51661002356DB /* CSMBaseCommand.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

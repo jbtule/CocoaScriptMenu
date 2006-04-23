@@ -45,10 +45,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "CSMPlaceHolderCommand.h"
+#import "CSMBaseCommand.h"
 
 
-@interface CSMPlainOpenCommand : CSMPlaceholderCommand {
+@interface CSMPlainOpenCommand : CSMBaseCommand {
 
 }
 

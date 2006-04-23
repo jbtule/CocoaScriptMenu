@@ -44,23 +44,38 @@
 //
 
 #import "CSMCommand.h"
-#import "CSMCommandPrivate.h"
-#import "CSMWorkflowCommand.h"
-#import "CSMExecutableCommand.h"
-#import "CSMShellScriptCommand.h"
-#import "CSMFolderCommand.h"
-#import "CSMAppleScriptCommand.h"
-#import "CSMPlainOpenCommand.h"
-#import "CSMPlaceholderCommand.h"
-#import "NSString-UTIAdditions.h"
+#import "CSMCommandCreator.h"
 #import "CSMMenuNameParser.h"
-#import "TenThreeCompatibility.h"
+#import "CSMCommand-SubclassMustImplement.h"
 
+#define ASSERT_UNIMPLEMENTED [NSException raise:@"UnImplmentedMethod" format:@"Subclass %@ Must Implement %@", NSStringFromClass([self class]),NSStringFromSelector(_cmd),nil]
 
-
+static Class theCSMCommandCreator;
+static Class theCSMMenuNameParser;
 
 @implementation CSMCommand
 
++(void)initialize{
+    theCSMCommandCreator = [CSMCommandCreator class];
+    theCSMMenuNameParser = [CSMMenuNameParser class];
+}
+
++(void)setMenuNameParser:(Class)aParser{
+    theCSMMenuNameParser = aParser;
+}
+
++(Class)menuNameParser{
+    return theCSMMenuNameParser;
+}
+
+
++(void)setCommandCreator:(Class)aCreator{
+    theCSMCommandCreator = aCreator;
+}
+
++(Class)commandCreator{
+    return theCSMCommandCreator;
+}
 
 - (void)dealloc {
     [theNameParser release];
@@ -73,39 +88,13 @@
 }
 
 +(id)alloc{
-    static CSMCommand* theCommandPlaceHolder = nil;
-    if(theCommandPlaceHolder == nil){
-        theCommandPlaceHolder =[[CSMPlaceholderCommand alloc] init];
-    }
-    return theCommandPlaceHolder;
+    return [self commandCreator];
 }
 
 
 -(id)initWithScriptPath:(NSString*) aPath{
-    theNameParser= nil;
-    NSString* tWorkflowExt = @"workflow";
-    NSString* tUTTypeWorkflow = 
-        [(NSString*)TTCTypeCreatePreferredIdentifierForTag(
-                                              kUTTagClassFilenameExtension,
-                                               (CFStringRef)tWorkflowExt,
-                                              NULL) autorelease];
-  
-    NSString* tUTI = [aPath UTIForPath];
-    if([tUTI conformsToUTI:@"com.apple.applescript.text"] 
-             || [tUTI conformsToUTI:@"com.apple.applescript.script"]){
-       return [[CSMAppleScriptCommand alloc] initWithScriptPath:aPath];
-    }else if([tUTI conformsToUTI:@"public.shell-script"]){
-        return  [[CSMShellScriptCommand alloc] initWithScriptPath:aPath];
-    }else if([tUTI conformsToUTI:TTCConstantIfAvailible((void**)&kUTTypeApplication,@"com.apple.application ")]){
-        return [[CSMExecutableCommand alloc] initWithScriptPath:aPath];
-    }else if([tUTI conformsToUTI:tUTTypeWorkflow]){
-        return [[CSMWorkflowCommand alloc] initWithScriptPath:aPath];
-    }else if([tUTI conformsToUTI:TTCConstantIfAvailible((void**)&kUTTypeFolder,@"public.folder")]){
-        return [[CSMFolderCommand alloc] initWithScriptPath:aPath];
-    }else{
-        NSLog(@"Unknown Script %@ | %@",aPath, [aPath UTIForPath]);
-        return [[CSMPlainOpenCommand alloc] initWithScriptPath:aPath];
-    }
+    ASSERT_UNIMPLEMENTED;
+    return nil;
 }
 
 -(NSString*)menuName{

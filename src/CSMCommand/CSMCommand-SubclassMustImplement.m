@@ -44,20 +44,12 @@
 //  Copyright 2005 James Tuley. All rights reserved.
 //
 
-#import "CSMCommandPrivate.h"
+#import "CSMCommand-SubclassMustImplement.h"
 
 #define ASSERT_UNIMPLEMENTED [NSException raise:@"UnImplmentedMethod" format:@"Subclass %@ Must Implement %@", NSStringFromClass([self class]),NSStringFromSelector(_cmd),nil]
 
 
-@implementation CSMCommand(Private)
-
-//Private initializers
-
-+(id)CSM_alloc{
-    return [super alloc];
-}
-
-//factorMethod
+@implementation CSMCommand(SubclassMustImplement)
 
 
 //Template methods

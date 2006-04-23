@@ -53,6 +53,12 @@
     CSMMenuNameParser* theNameParser;
 }
 
++(void)setMenuNameParser:(Class)aParser;
++(Class)menuNameParser;
+
++(void)setCommandCreator:(Class)aCreator;
++(Class)commandCreator;
+
 +(id)commandWithScriptPath:(NSString*) aPath;
 
 -(id)initWithScriptPath:(NSString*) path;
