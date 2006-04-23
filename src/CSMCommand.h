@@ -45,10 +45,12 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class CSMMenuNameParser;
 
 @interface CSMCommand : NSObject {
     @protected
     NSString* theFilePath;
+    CSMMenuNameParser* theNameParser;
 }
 
 +(id)commandWithScriptPath:(NSString*) aPath;

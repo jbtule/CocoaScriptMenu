@@ -47,6 +47,8 @@
 #import <Cocoa/Cocoa.h>
 
 
+
+
 @interface NSString(UTIAdditions)
 
 -(NSString*)UTIForPath;

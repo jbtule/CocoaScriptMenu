@@ -38,6 +38,12 @@
 		3EA19BBB08DE12B200C1D575 /* scripticon.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 3EA19BBA08DE12B200C1D575 /* scripticon.tiff */; };
 		3EA19BBC08DE12B200C1D575 /* scripticon.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 3EA19BBA08DE12B200C1D575 /* scripticon.tiff */; };
 		3EC96A9F08DE22EB002DE0DF /* test.workflow in Resources */ = {isa = PBXBuildFile; fileRef = 3EC96A9A08DE22EA002DE0DF /* test.workflow */; };
+		3ED7014908FB6C50003EB257 /* TenThreeCompatibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E62272008FB641700639892 /* TenThreeCompatibility.m */; };
+		3ED7014A08FB6C51003EB257 /* TenThreeCompatibility.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E62271F08FB641700639892 /* TenThreeCompatibility.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3EDF534A08EF52F400FAAC2C /* CSMMenuNameParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EDF534808EF52F400FAAC2C /* CSMMenuNameParser.h */; };
+		3EDF534B08EF52F400FAAC2C /* CSMMenuNameParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDF534908EF52F400FAAC2C /* CSMMenuNameParser.m */; };
+		3EDF543208EF77B000FAAC2C /* MenuNameParserTest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3EDF543008EF77B000FAAC2C /* MenuNameParserTest.h */; };
+		3EDF543308EF77B000FAAC2C /* MenuNameParserTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDF543108EF77B000FAAC2C /* MenuNameParserTest.m */; };
 		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
 		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
@@ -83,6 +89,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
+				3EDF543208EF77B000FAAC2C /* MenuNameParserTest.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +109,8 @@
 		3E05BF0808DE384E00121A7B /* CSMPlainOpenCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMPlainOpenCommand.m; sourceTree = "<group>"; };
 		3E05C08408DE49D700121A7B /* CSMScriptMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMScriptMenu.h; sourceTree = "<group>"; };
 		3E05C08508DE49D700121A7B /* CSMScriptMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMScriptMenu.m; sourceTree = "<group>"; };
+		3E62271F08FB641700639892 /* TenThreeCompatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TenThreeCompatibility.h; sourceTree = "<group>"; };
+		3E62272008FB641700639892 /* TenThreeCompatibility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TenThreeCompatibility.m; sourceTree = "<group>"; };
 		3E87022C08DD32CF0015C10A /* UnitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E87022D08DD32CF0015C10A /* UnitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "UnitTests-Info.plist"; sourceTree = "<group>"; };
 		3E87023608DD33260015C10A /* CSMCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMCommand.h; sourceTree = "<group>"; };
@@ -128,6 +137,10 @@
 		3EC96AC008DE274B002DE0DF /* CSMExecutableCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMExecutableCommand.m; sourceTree = "<group>"; };
 		3EC96AE308DE2767002DE0DF /* CSMFolderCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMFolderCommand.h; sourceTree = "<group>"; };
 		3EC96AE408DE2767002DE0DF /* CSMFolderCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMFolderCommand.m; sourceTree = "<group>"; };
+		3EDF534808EF52F400FAAC2C /* CSMMenuNameParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMMenuNameParser.h; sourceTree = "<group>"; };
+		3EDF534908EF52F400FAAC2C /* CSMMenuNameParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMMenuNameParser.m; sourceTree = "<group>"; };
+		3EDF543008EF77B000FAAC2C /* MenuNameParserTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuNameParserTest.h; sourceTree = "<group>"; };
+		3EDF543108EF77B000FAAC2C /* MenuNameParserTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuNameParserTest.m; sourceTree = "<group>"; };
 		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* CocoaScriptMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CocoaScriptMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -204,10 +217,14 @@
 				3E05BDF908DE28C100121A7B /* NSString-UTIAdditions.h */,
 				3E05BDFA08DE28C100121A7B /* NSString-UTIAdditions.m */,
 				3E8702B308DD41C90015C10A /* CocoaScriptMenu.h */,
-				3E05C08408DE49D700121A7B /* CSMScriptMenu.h */,
-				3E05C08508DE49D700121A7B /* CSMScriptMenu.m */,
 				3E9F606508E0D96D00BD4B78 /* CSMFileSubscription.h */,
 				3E9F606608E0D96D00BD4B78 /* CSMFileSubscription.m */,
+				3E05C08408DE49D700121A7B /* CSMScriptMenu.h */,
+				3E05C08508DE49D700121A7B /* CSMScriptMenu.m */,
+				3EDF534808EF52F400FAAC2C /* CSMMenuNameParser.h */,
+				3EDF534908EF52F400FAAC2C /* CSMMenuNameParser.m */,
+				3E62271F08FB641700639892 /* TenThreeCompatibility.h */,
+				3E62272008FB641700639892 /* TenThreeCompatibility.m */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -268,6 +285,8 @@
 				3E8702AF08DD418D0015C10A /* UTITests.h */,
 				3E8702B008DD418D0015C10A /* UTITests.m */,
 				3EB2C33D08DE112300F0C359 /* test.scpt */,
+				3EDF543008EF77B000FAAC2C /* MenuNameParserTest.h */,
+				3EDF543108EF77B000FAAC2C /* MenuNameParserTest.m */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -290,6 +309,8 @@
 				3E05C08608DE49D700121A7B /* CSMScriptMenu.h in Headers */,
 				3E9F5DCA08DFA70000BD4B78 /* CSMPlaceholderCommand.h in Headers */,
 				3E9F606708E0D96D00BD4B78 /* CSMFileSubscription.h in Headers */,
+				3EDF534A08EF52F400FAAC2C /* CSMMenuNameParser.h in Headers */,
+				3ED7014A08FB6C51003EB257 /* TenThreeCompatibility.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +491,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E8702B108DD418D0015C10A /* UTITests.m in Sources */,
+				3EDF543308EF77B000FAAC2C /* MenuNameParserTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +511,8 @@
 				3E05C08708DE49D700121A7B /* CSMScriptMenu.m in Sources */,
 				3E9F5DCB08DFA70000BD4B78 /* CSMPlaceholderCommand.m in Sources */,
 				3E9F606808E0D96D00BD4B78 /* CSMFileSubscription.m in Sources */,
+				3EDF534B08EF52F400FAAC2C /* CSMMenuNameParser.m in Sources */,
+				3ED7014908FB6C50003EB257 /* TenThreeCompatibility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,7 +627,7 @@
 		3E87021E08DD325A0015C10A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
 			name = Release;

@@ -63,8 +63,10 @@
 -(void)createFileSystemSubscriptionForPath:(NSString*)aPath;
 +(void)refreshMenu:(NSMenu*) aMenu withMenuItems:(NSArray*)aMenuItems;
 +(NSArray*)menuItemsForPath:(NSString*)aPath;
+-(unsigned int)countOfScripts;
 -(void)updateScriptMenu;
 -(NSArray*)standardScriptLocations;
+
 //Delegate methods
 -(NSMenuItem*)showScriptFolderMenuItem;
 -(NSArray*)argumentsForShellScripts;

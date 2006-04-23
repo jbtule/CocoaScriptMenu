@@ -46,6 +46,7 @@
 #import "CSMScriptMenu.h"
 #import "CSMCommand.h"
 #import "CSMFileSubscription.h"
+#import "TenThreeCompatibility.h"
 
 void CSMUpdateMenuHandle(FNMessage message,OptionBits flags,void * refcon,FNSubscriptionRef subscription){
     if(message == kFNDirectoryModifiedMessage){
@@ -121,6 +122,26 @@ void CSMUpdateMenuHandle(FNMessage message,OptionBits flags,void * refcon,FNSubs
     return tMenuItems;
 }
 
+-(unsigned int)countOfScripts{
+    NSArray* tArray = [self scriptLocations];
+    
+    NSEnumerator* tLocEnum = [tArray objectEnumerator];
+    NSString* tLoc;
+    unsigned int tCount = 0;
+    while(tLoc = [tLocEnum nextObject]){
+        NSEnumerator* tEnum = [[[NSFileManager defaultManager] subpathsAtPath:tLoc] objectEnumerator];
+        id tPath =nil;
+        while(tPath =[tEnum nextObject]){
+            BOOL tIsDir =NO;
+            [[NSFileManager defaultManager] fileExistsAtPath:[tLoc stringByAppendingPathComponent:tPath ] isDirectory:&tIsDir];
+            if(!([[tPath lastPathComponent] hasPrefix:@"."] || tIsDir) ){
+                tCount++;
+            }
+        }
+    }
+    return tCount;
+}
+
 
 -(void)updateMenuForScripts:(NSMenu*)aMenu{
     NSMutableArray* tTotalMenus = [NSMutableArray array];
@@ -158,7 +179,7 @@ void CSMUpdateMenuHandle(FNMessage message,OptionBits flags,void * refcon,FNSubs
 -(void)createFileSystemSubscriptionForPath:(NSString*)aPath{
     
     if([thePathSubscriptions objectForKey:aPath] == nil){
-        [thePathSubscriptions setObject:[CSMFileSubscription createForPath:aPath WithCallback:CSMUpdateMenuHandle AndContext:NULL] forKey:aPath];
+        [thePathSubscriptions setObject:[CSMFileSubscription createForPath:aPath withCallback:CSMUpdateMenuHandle andContext:NULL] forKey:aPath];
     }
             
 }
@@ -187,9 +208,9 @@ void CSMUpdateMenuHandle(FNMessage message,OptionBits flags,void * refcon,FNSubs
 
 -(NSArray*)standardScriptLocations{
     
-    NSArray* tAppSupUserPaths= NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask,YES);
+    NSArray* tAppSupUserPaths= TTCSearchPathForDirectoriesInDomains(TTCApplicationSupportDirectory, NSUserDomainMask,YES);
 
-    NSArray* tAppSupPaths= NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory,NSAllDomainsMask ^ NSUserDomainMask,YES);
+    NSArray* tAppSupPaths= TTCSearchPathForDirectoriesInDomains(TTCApplicationSupportDirectory,NSAllDomainsMask ^ NSUserDomainMask,YES);
     
     NSMutableArray* tGuarenteedUserFirstArray = [NSMutableArray array];
     

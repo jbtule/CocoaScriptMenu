@@ -48,4 +48,4 @@
 #import <CocoaScriptMenu/CSMCommand.h>
 #import <CocoaScriptMenu/CSMScriptMenu.h>
 #import <CocoaScriptMenu/NSString-UTIAdditions.h>
-
+#import <CocoaScriptMenu/TenThreeCompatibility.h>

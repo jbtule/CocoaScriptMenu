@@ -46,6 +46,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "CSMPlainOpenCommand.h"
+
 @class CSMFileSubscription;
 
 @interface CSMFolderCommand : CSMPlainOpenCommand {

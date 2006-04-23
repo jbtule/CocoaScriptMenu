@@ -53,9 +53,17 @@
 #import "CSMPlainOpenCommand.h"
 #import "CSMPlaceholderCommand.h"
 #import "NSString-UTIAdditions.h"
+#import "CSMMenuNameParser.h"
+#import "TenThreeCompatibility.h"
+
+
+
+
 @implementation CSMCommand
 
+
 - (void)dealloc {
+    [theNameParser release];
     [theFilePath release];
     [super dealloc];
 }
@@ -74,9 +82,10 @@
 
 
 -(id)initWithScriptPath:(NSString*) aPath{
+    theNameParser= nil;
     NSString* tWorkflowExt = @"workflow";
     NSString* tUTTypeWorkflow = 
-        [(NSString*)UTTypeCreatePreferredIdentifierForTag(
+        [(NSString*)TTCTypeCreatePreferredIdentifierForTag(
                                               kUTTagClassFilenameExtension,
                                                (CFStringRef)tWorkflowExt,
                                               NULL) autorelease];
@@ -87,11 +96,11 @@
        return [[CSMAppleScriptCommand alloc] initWithScriptPath:aPath];
     }else if([tUTI conformsToUTI:@"public.shell-script"]){
         return  [[CSMShellScriptCommand alloc] initWithScriptPath:aPath];
-    }else if([tUTI conformsToUTI:(NSString*)kUTTypeApplication]){
+    }else if([tUTI conformsToUTI:TTCConstantIfAvailible((void**)&kUTTypeApplication,@"com.apple.application ")]){
         return [[CSMExecutableCommand alloc] initWithScriptPath:aPath];
     }else if([tUTI conformsToUTI:tUTTypeWorkflow]){
         return [[CSMWorkflowCommand alloc] initWithScriptPath:aPath];
-    }else if([tUTI conformsToUTI:(NSString*)kUTTypeFolder]){
+    }else if([tUTI conformsToUTI:TTCConstantIfAvailible((void**)&kUTTypeFolder,@"public.folder")]){
         return [[CSMFolderCommand alloc] initWithScriptPath:aPath];
     }else{
         NSLog(@"Unknown Script %@ | %@",aPath, [aPath UTIForPath]);
@@ -100,21 +109,19 @@
 }
 
 -(NSString*)menuName{
-    NSString* tName =[[[self filePath] lastPathComponent] stringByDeletingPathExtension];
-    if([tName length] > 2){
-        if([[NSCharacterSet decimalDigitCharacterSet] isSupersetOfSet:
-            [NSCharacterSet characterSetWithCharactersInString:[tName substringToIndex:2]]])
-                tName = [tName substringFromIndex:2];
-    }
-    return tName;
+    return [theNameParser name];
 }
 
 -(NSString*)filePath{
     return theFilePath;
 }
 
+-(NSString*)sortName{
+    return [theNameParser sortName];
+}
+
 -(NSComparisonResult)compare:(CSMCommand *)aCommand{
-    return [[[self filePath] lastPathComponent] compare:[[aCommand filePath] lastPathComponent]];
+    return [[self sortName] compare:[theNameParser sortName]];
 }
 
 -(IBAction)executeScript:(id)sender{

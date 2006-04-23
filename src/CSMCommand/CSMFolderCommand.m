@@ -44,15 +44,19 @@
 //  Copyright 2005 James Tuley. All rights reserved.
 //
 
+
+
 #import "CSMFolderCommand.h"
 #import "CSMScriptMenu.h"
 #import "CSMFileSubscription.h"
 
-void CSMFolderUpdateMenuHandle(FNMessage message,OptionBits flags,void* aFolderCommand,FNSubscriptionRef subscription){
+ void CSMFolderUpdateMenuHandle(FNMessage message,OptionBits flags,void* aFolderCommand,FNSubscriptionRef subscription){
     if(message == kFNDirectoryModifiedMessage){
         [(CSMFolderCommand*)aFolderCommand updateMenuItems];
     }
 }
+
+
 
 @implementation CSMFolderCommand
 
@@ -79,7 +83,7 @@ void CSMFolderUpdateMenuHandle(FNMessage message,OptionBits flags,void* aFolderC
 
 -(void)updateMenuItems{
     if(theSubscription ==nil)
-        theSubscription = [[CSMFileSubscription alloc]initForPath:[self filePath] WithCallback:(FNSubscriptionProcPtr) CSMFolderUpdateMenuHandle AndContext:(void*)self];
+        theSubscription = [[CSMFileSubscription alloc]initForPath:[self filePath] withCallback:(FNSubscriptionProcPtr) CSMFolderUpdateMenuHandle andContext:(void*)self];
     [CSMScriptMenu refreshMenu:theSubMenu withMenuItems:[CSMScriptMenu menuItemsForPath:[self filePath]]];
 }
 

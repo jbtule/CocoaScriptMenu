@@ -44,7 +44,7 @@
 //
 
 #import "NSString-UTIAdditions.h"
-
+#import "TenThreeCompatibility.h"
 
 @implementation NSString(UTIAdditions)
 
@@ -59,7 +59,7 @@
         {
             
 
-            itemUTI =  (NSString*)UTTypeCreatePreferredIdentifierForTag (
+            itemUTI =  (NSString*)TTCTypeCreatePreferredIdentifierForTag (
                                                                          kUTTagClassFilenameExtension,
                                                                          (CFStringRef)[tStandardizeSelf pathExtension], 
                                                                          NULL );
@@ -67,24 +67,16 @@
         else if([[NSFileManager defaultManager] fileExistsAtPath:tStandardizeSelf isDirectory:&tIsDir] && tIsDir ){
             NSSet* tLocalVolumes = [NSSet setWithArray: [[NSWorkspace sharedWorkspace] mountedLocalVolumePaths]];
             if([tLocalVolumes containsObject:tStandardizeSelf]){
-                return (NSString*) kUTTypeVolume;
+                return TTCConstantIfAvailible((void**)&kUTTypeVolume,@"public.volume");
             }else{
-                return (NSString*) kUTTypeFolder;
+                return TTCConstantIfAvailible((void**)&kUTTypeFolder,@"public.folder");
             }
         }else{
-            NSDictionary* tFileAttr = [[NSFileManager defaultManager] fileAttributesAtPath:tStandardizeSelf traverseLink:YES];
-
-            CFStringRef typeString = UTCreateStringForOSType([[tFileAttr valueForKey:NSFileHFSTypeCode] intValue]);
-            
-            itemUTI = (NSString*)UTTypeCreatePreferredIdentifierForTag (
+            itemUTI = (NSString*)TTCTypeCreatePreferredIdentifierForTag (
                                                                         kUTTagClassOSType, 
-                                                                        typeString, 
+                                                                        (CFStringRef) NSHFSTypeOfFile(tStandardizeSelf), 
                                                                         NULL );
-           CFRelease( typeString );
         }
-        
-        
-        
 
     if(itemUTI ==nil)
         return nil;

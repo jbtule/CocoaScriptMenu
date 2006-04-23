@@ -45,13 +45,14 @@
 //
 
 #import "CSMPlainOpenCommand.h"
-
+#import "CSMMenuNameParser.h"
 
 @implementation CSMPlainOpenCommand
 
 -(id)initWithScriptPath:(NSString*) aPath{
     if(self = [super init]){
         theFilePath = [[aPath stringByStandardizingPath] retain];
+        theNameParser = [[CSMMenuNameParser alloc] initWithPath:theFilePath];
     }return self;
 }
 
@@ -63,6 +64,9 @@
     id tMenuItem = [[[NSMenuItem alloc] initWithTitle:[self menuName] action:@selector(executeScript:)keyEquivalent:@""] autorelease];
     [tMenuItem setRepresentedObject:self];
     [tMenuItem setTarget:self];
+    [tMenuItem setKeyEquivalent:[theNameParser keyEquivalent]];
+    [tMenuItem setKeyEquivalentModifierMask:[theNameParser keyEquivalentModifiers]];
+
     return tMenuItem;
 }
 

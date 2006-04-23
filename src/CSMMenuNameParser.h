@@ -35,49 +35,34 @@
 *
 * ***** END LICENSE BLOCK ***** */
 
+
 //
-//  CSMFileSubscription.m
+//  CSMMenuNameParser.h
 //  CocoaScriptMenu
 //
-//  Created by James Tuley on 9/20/05.
+//  Created by James Tuley on 10/1/05.
 //  Copyright 2005 James Tuley. All rights reserved.
 //
 
-#import "CSMFileSubscription.h"
+#import <Cocoa/Cocoa.h>
 
-@implementation CSMFileSubscription
 
--(void)dealloc{
-    [thePath release];    
-    FNUnsubscribe(theSubRef);
-    [super dealloc];
+@interface CSMMenuNameParser : NSObject {
+    @protected
+    NSString* theMenuName;
+    unsigned int theModifier;
+    NSString* theKeyEquivalent;
+    NSString* thePrefix;
 }
 
--(NSString*)path{
-    return thePath;
-}
+-(id)initWithPath:(NSString*) aPath;
 
-+(id)createForPath:(NSString*)aPath withCallback:(FNSubscriptionProcPtr) aCallback andContext:(void*) aContext{
-    return [[[self alloc] initForPath:aPath withCallback:aCallback andContext:aContext] autorelease];
-}
+-(NSString*)keyEquivalent;
 
--(id)initForPath:(NSString*)aPath withCallback:(FNSubscriptionProcPtr) aCallback andContext:(void*) aContext{
-    if(self = [super init]){
-        theFSRef:
-        theSubRef = NULL;
-        thePath = [aPath retain];
-        NSURL* tURL =[NSURL fileURLWithPath:[self path]];
-        if(tURL != nil
-           &&  CFURLGetFSRef((CFURLRef)tURL,&theFSRef)){
-            FNSubscribe(&theFSRef,
-                        NewFNSubscriptionUPP(aCallback),
-                        aContext,
-                        kNilOptions,
-                        &theSubRef); 
-        }
-    }return self;
-}
+-(unsigned int)keyEquivalentModifiers;
 
+-(NSString*)name;
 
+-(NSString*)sortName;
 
 @end

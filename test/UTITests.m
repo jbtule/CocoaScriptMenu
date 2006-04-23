@@ -70,7 +70,7 @@
     STAssertEqualObjects(tUTIForScript,@"com.apple.applescript.script",nil);
     
     NSString* tUTIForWorkflow =[[[NSBundle bundleForClass:[self class]]  pathForResource:@"test" ofType:@"workflow"] UTIForPath];
-    NSString* tUTIForWorkflowTag = (NSString*)   UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension,
+    NSString* tUTIForWorkflowTag = (NSString*)   TTCTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension,
                                                                                        (CFStringRef) @"workflow",
                                                                                        NULL);
     STAssertEqualObjects(tUTIForWorkflow,tUTIForWorkflowTag,nil);
