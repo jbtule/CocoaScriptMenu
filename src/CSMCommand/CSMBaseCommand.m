@@ -10,10 +10,20 @@
 #import "CSMMenuNameParser.h"
 
 
+@interface CSMCommand(Private)
++(id)CSM_alloc;
+@end
+
+@implementation CSMCommand(Private)
++(id)CSM_alloc{
+    return [super alloc];
+}
+@end
+
 @implementation CSMBaseCommand
 
 +(id)alloc{
-    return [[[self superclass] superclass] alloc];
+    return [self CSM_alloc];
 }
 
 -(id)initWithScriptPath:(NSString*) aPath{
