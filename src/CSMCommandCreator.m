@@ -11,7 +11,7 @@
 
 @implementation CSMCommandCreator
 
-+(id)initWithScriptPath:(NSString*) aPath{
+-(id)initWithScriptPath:(NSString*) aPath{
     NSString* tWorkflowExt = @"workflow";
     NSString* tUTTypeWorkflow = 
         [(NSString*)TTCTypeCreatePreferredIdentifierForTag(

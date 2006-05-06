@@ -550,13 +550,10 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		3E87021908DD325A0015C10A /* Development */ = {
+		3E87021908DD325A0015C10A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(NATIVE_ARCH)";
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -580,11 +577,15 @@
 				WRAPPER_EXTENSION = framework;
 				ZERO_LINK = YES;
 			};
-			name = Development;
+			name = Debug;
 		};
-		3E87021A08DD325A0015C10A /* Deployment */ = {
+		3E87021A08DD325A0015C10A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -606,56 +607,25 @@
 				WRAPPER_EXTENSION = framework;
 				ZERO_LINK = NO;
 			};
-			name = Deployment;
+			name = Release;
 		};
-		3E87021B08DD325A0015C10A /* Default */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../STEnum_Project/STEnum/build/Embed\"";
-				FRAMEWORK_VERSION = A;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = CocoaScriptMenu_Prefix.pch;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(HOME)/Library/Frameworks";
-				LIBRARY_STYLE = DYNAMIC;
-				MACH_O_TYPE = mh_dylib;
-				PREBINDING = NO;
-				PRODUCT_NAME = CocoaScriptMenu;
-				WRAPPER_EXTENSION = framework;
-			};
-			name = Default;
-		};
-		3E87021D08DD325A0015C10A /* Development */ = {
+		3E87021D08DD325A0015C10A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
-			name = Development;
+			name = Debug;
 		};
-		3E87021E08DD325A0015C10A /* Deployment */ = {
+		3E87021E08DD325A0015C10A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				MACOSX_DEPLOYMENT_TARGET = 10.3;
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
-			name = Deployment;
+			name = Release;
 		};
-		3E87021F08DD325A0015C10A /* Default */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				MACOSX_DEPLOYMENT_TARGET = 10.4;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
-			};
-			name = Default;
-		};
-		3E87022F08DD32CF0015C10A /* Development */ = {
+		3E87022F08DD32CF0015C10A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
@@ -686,9 +656,9 @@
 				);
 				WRAPPER_EXTENSION = octest;
 			};
-			name = Development;
+			name = Debug;
 		};
-		3E87023008DD32CF0015C10A /* Deployment */ = {
+		3E87023008DD32CF0015C10A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
@@ -719,39 +689,7 @@
 				);
 				WRAPPER_EXTENSION = octest;
 			};
-			name = Deployment;
-		};
-		3E87023108DD32CF0015C10A /* Default */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
-				INFOPLIST_FILE = "UnitTests-Info.plist";
-				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
-				LIBRARY_STYLE = BUNDLE;
-				OPTIMIZATION_CFLAGS = "-O0";
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Cocoa,
-					"-framework",
-					SenTestingKit,
-				);
-				OTHER_REZFLAGS = "";
-				PREBINDING = NO;
-				PRODUCT_NAME = UnitTests;
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Default;
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -759,32 +697,29 @@
 		3E87021808DD325A0015C10A /* Build configuration list for PBXNativeTarget "CocoaScriptMenu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3E87021908DD325A0015C10A /* Development */,
-				3E87021A08DD325A0015C10A /* Deployment */,
-				3E87021B08DD325A0015C10A /* Default */,
+				3E87021908DD325A0015C10A /* Debug */,
+				3E87021A08DD325A0015C10A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Default;
+			defaultConfigurationName = Debug;
 		};
 		3E87021C08DD325A0015C10A /* Build configuration list for PBXProject "CocoaScriptMenu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3E87021D08DD325A0015C10A /* Development */,
-				3E87021E08DD325A0015C10A /* Deployment */,
-				3E87021F08DD325A0015C10A /* Default */,
+				3E87021D08DD325A0015C10A /* Debug */,
+				3E87021E08DD325A0015C10A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Default;
+			defaultConfigurationName = Debug;
 		};
 		3E87022E08DD32CF0015C10A /* Build configuration list for PBXNativeTarget "UnitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3E87022F08DD32CF0015C10A /* Development */,
-				3E87023008DD32CF0015C10A /* Deployment */,
-				3E87023108DD32CF0015C10A /* Default */,
+				3E87022F08DD32CF0015C10A /* Debug */,
+				3E87023008DD32CF0015C10A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Default;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

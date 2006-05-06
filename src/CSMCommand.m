@@ -50,30 +50,34 @@
 
 #define ASSERT_UNIMPLEMENTED [NSException raise:@"UnImplmentedMethod" format:@"Subclass %@ Must Implement %@", NSStringFromClass([self class]),NSStringFromSelector(_cmd),nil]
 
-static Class theCSMCommandCreator;
-static Class theCSMMenuNameParser;
+static id <CSMCommandCreator> theCSMCommandCreator;
+static id <CSMMenuNameParser> theCSMMenuNameParser;
 
 @implementation CSMCommand
 
 +(void)initialize{
-    theCSMCommandCreator = [CSMCommandCreator class];
-    theCSMMenuNameParser = [CSMMenuNameParser class];
+    theCSMCommandCreator = [[CSMCommandCreator alloc] init];
+    theCSMMenuNameParser = [[CSMMenuNameParser alloc] init];
 }
 
-+(void)setMenuNameParser:(Class)aParser{
++(void)setMenuNameParser:(id <CSMMenuNameParser>)aParser{
+    [theCSMMenuNameParser release];
     theCSMMenuNameParser = aParser;
+    [theCSMMenuNameParser retain];
 }
 
-+(Class)menuNameParser{
++(id <CSMMenuNameParser>)menuNameParser{
     return theCSMMenuNameParser;
 }
 
 
-+(void)setCommandCreator:(Class)aCreator{
++(void)setCommandCreator:(id <CSMCommandCreator>)aCreator{
+    [theCSMCommandCreator release];
     theCSMCommandCreator = aCreator;
+    [theCSMCommandCreator retain];
 }
 
-+(Class)commandCreator{
++(id <CSMCommandCreator>)commandCreator{
     return theCSMCommandCreator;
 }
 

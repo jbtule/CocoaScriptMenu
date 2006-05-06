@@ -46,18 +46,20 @@
 #import <Cocoa/Cocoa.h>
 
 @class CSMMenuNameParser;
+@protocol CSMMenuNameParser;
+@protocol CSMCommandCreator;
 
 @interface CSMCommand : NSObject {
     @protected
     NSString* theFilePath;
-    CSMMenuNameParser* theNameParser;
+    id <CSMMenuNameParser> theNameParser;
 }
 
-+(void)setMenuNameParser:(Class)aParser;
-+(Class)menuNameParser;
++(void)setMenuNameParser:(id <CSMMenuNameParser>)aParser;
++(id <CSMMenuNameParser>)menuNameParser;
 
-+(void)setCommandCreator:(Class)aCreator;
-+(Class)commandCreator;
++(void)setCommandCreator:(id <CSMCommandCreator>)aCreator;
++(id <CSMCommandCreator>)commandCreator;
 
 +(id)commandWithScriptPath:(NSString*) aPath;
 
@@ -72,6 +74,8 @@
 -(IBAction)executeScript:(id)sender;
 
 -(NSMenuItem*)menuItem;
+
+-(NSString*)sortName;
 
 @end
 

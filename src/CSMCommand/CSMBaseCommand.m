@@ -29,7 +29,7 @@
 -(id)initWithScriptPath:(NSString*) aPath{
     if(self = [super init]){
         theFilePath = [[aPath stringByStandardizingPath] retain];
-        theNameParser = [[[[self superclass] menuNameParser] alloc] initWithPath:theFilePath];
+        theNameParser = [[[[[self superclass] menuNameParser] class] alloc] initWithPath:theFilePath];
     }return self;
 }
 

@@ -46,6 +46,18 @@
 
 #import <Cocoa/Cocoa.h>
 
+@protocol CSMMenuNameParser <NSObject>
+-(id)initWithPath:(NSString*) aPath;
+
+-(NSString*)keyEquivalent;
+
+-(unsigned int)keyEquivalentModifiers;
+
+-(NSString*)name;
+
+-(NSString*)sortName;
+
+@end
 
 @interface CSMMenuNameParser : NSObject {
     @protected
