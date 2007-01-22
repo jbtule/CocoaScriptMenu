@@ -19,7 +19,8 @@
 * the Initial Developer. All Rights Reserved.
 *
 * Contributor(s):
-*           James Tuley <jbtule@mac.com> (Original Author)
+*           James Tuley <jay+csm@tuley.name> (Original Author)
+*           Gerad Putter                 (Sorting bug fix) 6/24/06
 *
 * Alternatively, the contents of this file may be used under the terms of
 * either the GNU General Public License Version 2 or later (the "GPL"), or
@@ -114,7 +115,8 @@ static id <CSMMenuNameParser> theCSMMenuNameParser;
 }
 
 -(NSComparisonResult)compare:(CSMCommand *)aCommand{
-    return [[self sortName] compare:[theNameParser sortName]];
+    //bug fix by Gerard Putter, before this fix it wasn't actually sorting and just using the finder order which appeared to be sorted
+    return [[self sortName] compare:[aCommand sortName]];
 }
 
 -(IBAction)executeScript:(id)sender{

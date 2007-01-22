@@ -19,8 +19,9 @@
 * the Initial Developer. All Rights Reserved.
 *
 * Contributor(s):
-*           James Tuley <jbtule@mac.com> (Original Author)
-*
+*           James Tuley <jay+csm@tuley.name> (Original Author)
+*           Wil Shipley                  (Changed way script path is generated - 1/1/07)
+* 
 * Alternatively, the contents of this file may be used under the terms of
 * either the GNU General Public License Version 2 or later (the "GPL"), or
 * the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
@@ -215,7 +216,8 @@ void CSMUpdateMenuHandle(FNMessage message,OptionBits flags,void * refcon,FNSubs
     NSMutableArray* tGuarenteedUserFirstArray = [NSMutableArray array];
     
     NSString * tASUserPath = [tAppSupUserPaths objectAtIndex:0];
-    tASUserPath = [tASUserPath stringByAppendingPathComponent:[[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleName"]];
+    //Wil Shipley change to use process name instead of app name from the bundle, it's certainly more readable and apparently more reliable
+    tASUserPath = [tASUserPath stringByAppendingPathComponent:[[NSProcessInfo processInfo] processName]];
     BOOL tIsDir = NO;
     if(![[NSFileManager defaultManager] fileExistsAtPath:tASUserPath isDirectory:&tIsDir]){
         [[NSFileManager defaultManager] createDirectoryAtPath:tASUserPath attributes:nil];
@@ -234,8 +236,8 @@ void CSMUpdateMenuHandle(FNMessage message,OptionBits flags,void * refcon,FNSubs
     [tPathsThatExist addObject:tASUserPath];
 
     while(tItem = [tEnumerator nextObject]){
-        
-        NSString* tScriptPath = [(NSString*)tItem stringByAppendingPathComponent:[[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleName"]];
+        //Wil Shipley change to use process name instead of app name from the bundle, it's certainly more readable and apparently more reliable
+        NSString* tScriptPath = [(NSString*)tItem stringByAppendingPathComponent:[[NSProcessInfo processInfo] processName]];
         tScriptPath = [tScriptPath stringByAppendingPathComponent:@"Scripts"];
         tIsDir = NO;
         if([[NSFileManager defaultManager] fileExistsAtPath:tScriptPath isDirectory:&tIsDir] && tIsDir){

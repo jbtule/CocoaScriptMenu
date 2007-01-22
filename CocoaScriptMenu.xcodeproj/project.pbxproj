@@ -23,6 +23,7 @@
 		3E05BF0A08DE384E00121A7B /* CSMPlainOpenCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E05BF0808DE384E00121A7B /* CSMPlainOpenCommand.m */; };
 		3E05C08608DE49D700121A7B /* CSMScriptMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E05C08408DE49D700121A7B /* CSMScriptMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3E05C08708DE49D700121A7B /* CSMScriptMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E05C08508DE49D700121A7B /* CSMScriptMenu.m */; };
+		3E0E09040B648B4F00D8F17F /* Contributors in Resources */ = {isa = PBXBuildFile; fileRef = 3E0E09030B648B4F00D8F17F /* Contributors */; };
 		3E87023808DD33260015C10A /* CSMCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E87023608DD33260015C10A /* CSMCommand.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3E87023908DD33260015C10A /* CSMCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E87023708DD33260015C10A /* CSMCommand.m */; };
 		3E87024D08DD363C0015C10A /* CSMAppleScriptCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E87024B08DD363C0015C10A /* CSMAppleScriptCommand.h */; };
@@ -51,30 +52,6 @@
 		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
 		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXBuildStyle section */
-		014CEA440018CDF011CA2923 /* Debug */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				ZERO_LINK = YES;
-			};
-			name = Debug;
-		};
-		014CEA450018CDF011CA2923 /* Release */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
-/* End PBXBuildStyle section */
 
 /* Begin PBXContainerItemProxy section */
 		3E87023208DD32DD0015C10A /* PBXContainerItemProxy */ = {
@@ -117,6 +94,7 @@
 		3E05BF0808DE384E00121A7B /* CSMPlainOpenCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMPlainOpenCommand.m; sourceTree = "<group>"; };
 		3E05C08408DE49D700121A7B /* CSMScriptMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMScriptMenu.h; sourceTree = "<group>"; };
 		3E05C08508DE49D700121A7B /* CSMScriptMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMScriptMenu.m; sourceTree = "<group>"; };
+		3E0E09030B648B4F00D8F17F /* Contributors */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Contributors; sourceTree = SOURCE_ROOT; };
 		3E62271F08FB641700639892 /* TenThreeCompatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TenThreeCompatibility.h; sourceTree = "<group>"; };
 		3E62272008FB641700639892 /* TenThreeCompatibility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TenThreeCompatibility.m; sourceTree = "<group>"; };
 		3E87022C08DD32CF0015C10A /* UnitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -231,6 +209,7 @@
 				3E05C08508DE49D700121A7B /* CSMScriptMenu.m */,
 				3EDF534808EF52F400FAAC2C /* CSMMenuNameParser.h */,
 				3EDF534908EF52F400FAAC2C /* CSMMenuNameParser.m */,
+				3E0E09030B648B4F00D8F17F /* Contributors */,
 				3E62271F08FB641700639892 /* TenThreeCompatibility.h */,
 				3E62272008FB641700639892 /* TenThreeCompatibility.m */,
 			);
@@ -340,61 +319,12 @@
 			);
 			buildRules = (
 			);
-			buildSettings = {
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
-				INFOPLIST_FILE = "UnitTests-Info.plist";
-				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
-				LIBRARY_STYLE = BUNDLE;
-				OPTIMIZATION_CFLAGS = "";
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Cocoa,
-					"-framework",
-					SenTestingKit,
-				);
-				OTHER_REZFLAGS = "";
-				PREBINDING = NO;
-				PRODUCT_NAME = UnitTests;
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-				WRAPPER_EXTENSION = octest;
-			};
 			dependencies = (
 				3E87023308DD32DD0015C10A /* PBXTargetDependency */,
 			);
 			name = UnitTests;
 			productName = UnitTests;
 			productReference = 3E87022C08DD32CF0015C10A /* UnitTests.octest */;
-			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
-<plist version=\"1.0\">
-<dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>English</string>
-	<key>CFBundleExecutable</key>
-	<string>UnitTests</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.yourcompany.UnitTests</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundlePackageType</key>
-	<string>APPL</string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
-</dict>
-</plist>
-";
 			productType = "com.apple.product-type.bundle";
 		};
 		8DC2EF4F0486A6940098B216 /* CocoaScriptMenu */ = {
@@ -408,23 +338,6 @@
 			);
 			buildRules = (
 			);
-			buildSettings = {
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_VERSION = A;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = CocoaScriptMenu_Prefix.pch;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(HOME)/Library/Frameworks";
-				LIBRARY_STYLE = DYNAMIC;
-				PREBINDING = NO;
-				PRODUCT_NAME = CocoaScriptMenu;
-				WRAPPER_EXTENSION = framework;
-			};
 			dependencies = (
 			);
 			name = CocoaScriptMenu;
@@ -439,12 +352,6 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			buildConfigurationList = 3E87021C08DD325A0015C10A /* Build configuration list for PBXProject "CocoaScriptMenu" */;
-			buildSettings = {
-			};
-			buildStyles = (
-				014CEA440018CDF011CA2923 /* Debug */,
-				014CEA450018CDF011CA2923 /* Release */,
-			);
 			hasScannedForEncodings = 1;
 			mainGroup = 0867D691FE84028FC02AAC07 /* CocoaScriptMenu */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
@@ -475,6 +382,7 @@
 				8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */,
 				3EA19BBB08DE12B200C1D575 /* scripticon.tiff in Resources */,
 				3E9F5E9708DFB8DD00BD4B78 /* License.txt in Resources */,
+				3E0E09040B648B4F00D8F17F /* Contributors in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
